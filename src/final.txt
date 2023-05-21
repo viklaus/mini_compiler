@@ -1,0 +1,28 @@
+
+section .text
+	global main
+L0:
+main :
+	push ebp
+	mov ebp, esp
+	sub esp, 0
+	mov [ ebp - 4 ], dword 10
+	mov [ ebp - 8 ], dword 5
+	mov eax, [ ebp - 4 ]
+	sub eax, [ ebp - 8 ]
+	mov [ ebp - 12 ], eax
+	mov eax, [ ebp + 8 ]
+	mov ebx, [ ebp - 12 ]
+	mov [ eax + 12 ], ebx
+	mov ebx, [ ebp - 16 ]
+	mov [ eax + 8 ], ebx
+	mov ebx, [ ebp - 20 ]
+	mov [ eax + 4 ], ebx
+	mov ebx, [ ebp - 24 ]
+	mov [ eax + 0 ], ebx
+	leave
+	ret
+L1:
+section .data
+	BP times 4 dd 0
+	SP times 4 dd 0

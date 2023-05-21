@@ -1,0 +1,76 @@
+parser.y++: In function ‘void set_int_type(int)’:
+parser.y++:3270:19: warning: spurious trailing ‘%’ in format [-Wformat=]
+ 3270 |    sscanf(yytext, "%", &(yylval.num->intVal));
+      |                   ^~~
+parser.y++:3270:19: warning: too many arguments for format [-Wformat-extra-args]
+parser.y++:3276:19: warning: format ‘%lld’ expects argument of type ‘long long int*’, but argument 3 has type ‘int*’ [-Wformat=]
+ 3276 |    sscanf(yytext, "%lld", &(yylval.num->intVal));
+      |                   ^~~~~~  ~~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           int*
+parser.y++:3280:19: warning: format ‘%llo’ expects argument of type ‘long long unsigned int*’, but argument 3 has type ‘int*’ [-Wformat=]
+ 3280 |    sscanf(yytext, "%llo", &(yylval.num->intVal));
+      |                   ^~~~~~  ~~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           int*
+parser.y++:3284:19: warning: format ‘%llx’ expects argument of type ‘long long unsigned int*’, but argument 3 has type ‘int*’ [-Wformat=]
+ 3284 |    sscanf(yytext, "%llx", &(yylval.num->intVal));
+      |                   ^~~~~~  ~~~~~~~~~~~~~~~~~~~~~
+      |                           |
+      |                           int*
+ast.cpp: In function ‘treeNode* makeleaf(std::string)’:
+ast.cpp:40:25: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   40 |   fprintf(dotfile, "\t%lu [label=\"\\\"%s\\\"\" shape=box style=filled color=\"dodgerblue\" fillcolor=\"lightyellow\"];\n", node->node_id, s.c_str());
+      |                       ~~^                                                                                                   ~~~~~~~~~~~~~
+      |                         |                                                                                                         |
+      |                         long unsigned int                                                                                         int
+      |                       %u
+ast.cpp:43:25: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   43 |   fprintf(dotfile, "\t%lu [label=\"%s\" shape=box style=filled color=\"dodgerblue\" fillcolor=\"lightyellow\"];\n", node->node_id,node->node_name.c_str() );
+      |                       ~~^                                                                                           ~~~~~~~~~~~~~
+      |                         |                                                                                                 |
+      |                         long unsigned int                                                                                 int
+      |                       %u
+ast.cpp: In function ‘treeNode* makenode(std::string, std::vector<data2>&)’:
+ast.cpp:61:43: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   61 |    if(v[i].str!="") fprintf(dotfile, "\t%lu [label=\"%s\"];\n", opid, v[i].str.c_str());
+      |                                         ~~^                     ~~~~
+      |                                           |                     |
+      |                                           long unsigned int     int
+      |                                         %u
+ast.cpp:64:24: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   64 |  fprintf(dotfile, "\t%lu [label=\"%s\"];\n", node->node_id, node->node_name.c_str());
+      |                      ~~^                     ~~~~~~~~~~~~~
+      |                        |                           |
+      |                        long unsigned int           int
+      |                      %u
+ast.cpp:70:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   70 |             fprintf(dotfile, "\t%lu -> %lu;\n", node->node_id, v[i].node->node_id);
+      |                                 ~~^             ~~~~~~~~~~~~~
+      |                                   |                   |
+      |                                   long unsigned int   int
+      |                                 %u
+ast.cpp:70:42: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘int’ [-Wformat=]
+   70 |             fprintf(dotfile, "\t%lu -> %lu;\n", node->node_id, v[i].node->node_id);
+      |                                        ~~^
+      |                                          |
+      |                                          long unsigned int
+      |                                        %u
+ast.cpp:73:43: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘int’ [-Wformat=]
+   73 |    if(v[i].str!="") fprintf(dotfile, "\t%lu -> %lu;\n", node->node_id, op_id[j]);
+      |                                         ~~^             ~~~~~~~~~~~~~
+      |                                           |                   |
+      |                                           long unsigned int   int
+      |                                         %u
+ast.cpp:73:50: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘__gnu_cxx::__alloc_traits<std::allocator<int>, int>::value_type’ {aka ‘int’} [-Wformat=]
+   73 |    if(v[i].str!="") fprintf(dotfile, "\t%lu -> %lu;\n", node->node_id, op_id[j]);
+      |                                                ~~^
+      |                                                  |
+      |                                                  long unsigned int
+      |                                                %u
+codegen.cpp:1075:24: warning: unknown escape sequence: '\`'
+ 1075 |         it.second[0] = '\`', it.second[it.second.length()-1] = '\`';
+      |                        ^~~~
+codegen.cpp:1075:64: warning: unknown escape sequence: '\`'
+ 1075 |         it.second[0] = '\`', it.second[it.second.length()-1] = '\`';
+      |                                                                ^~~~
